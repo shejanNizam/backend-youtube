@@ -10,10 +10,7 @@ const videoSchema = new mongoose.Schema(
       type: String, // cloudinary url
       required: true,
     },
-    owner: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
+
     title: {
       type: String,
       required: true,
@@ -24,7 +21,7 @@ const videoSchema = new mongoose.Schema(
     },
     duration: {
       type: Number,
-      default: 0,
+      required: true,
     },
     views: {
       type: Number,
@@ -33,6 +30,10 @@ const videoSchema = new mongoose.Schema(
     isPublished: {
       type: Boolean,
       default: true,
+    },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   { timestamps: true }
